@@ -2,8 +2,8 @@
 
 <h1>Students</h1>
 
-<table>
-  <thead>
+<table class="table table-striped">
+  <thead class="thead-light">
     <tr>
       <th>First name</th>
       <th>Last name</th>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'New Student', new_student_path, class: "btn btn-primary"  %>

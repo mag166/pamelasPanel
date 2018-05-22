@@ -12,6 +12,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @cohorts = @student.cohorts
   end
 
   # GET /students/new

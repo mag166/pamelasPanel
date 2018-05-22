@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Student.create(first_name: "Minhal", last_name:"Gardezi", age:24, education:"college")
 Teacher.create(first_name: "Orlando", last_name:"Caraballo", age:24, salary:2424, education:"phd")
-Course.create(name:"SEI", hours:8)
+Teacher.create(first_name: "Hot", last_name:"Stuff", age:24, salary:233333, education:"phd")
+Course.create(name:"Software Engineering Intensive", hours:8)
+Course.create(name:"Javascript Intro", hours:8)
+
 Cohort.create(name:"March 2018", start_date:Date.today, end_date:Date.today, course_id:1, teacher_id:1)
 StudentCohort.create(cohort_id:1,student_id:1)

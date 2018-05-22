@@ -1,4 +1,16 @@
 <p id="notice"><%= notice %></p>
+<div class="jumbotron">
+
+<h1 class="display-7"><%=@cohort.name + " Cohort"%></h1>
+<p>
+  <strong>Course:</strong>
+  <%= @cohort.course.name %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @cohort.teacher.first_name + " " + @cohort.teacher.last_name %>
+</p>
 
 <p>
   <strong>Name:</strong>
@@ -14,23 +26,19 @@
   <strong>End date:</strong>
   <%= @cohort.end_date %>
 </p>
+  <p class="lead">
+    <%= link_to 'Edit', edit_cohort_path(@cohort), class: "btn btn-primary" %> |
+    <%= link_to 'Back', cohorts_path, class: "btn btn-primary" %>  </p>
+</div>
 
-<p>
-  <strong>Course:</strong>
-  <%= @cohort.course_id %>
-</p>
 
-<p>
-  <strong>Teacher:</strong>
-  <%= @cohort.teacher_id %>
-</p>
 
-<%= link_to 'Edit', edit_cohort_path(@cohort) %> |
-<%= link_to 'Back', cohorts_path %>
+
+
 
 <h2> Enrolled Students </h2>
-<table>
-  <thead>
+<table class="table  table-striped">
+  <thead class="thead-light">
     <tr>
       <th>First name</th>
       <th>Last name</th>

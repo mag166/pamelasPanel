@@ -2,7 +2,7 @@
 
 <h1>Teachers</h1>
 
-<table class="table">
+<table class="table table-striped">
   <thead class="thead-light">
     <tr>
       <th>First name</th>
@@ -21,7 +21,7 @@
         <td><%= teacher.last_name %></td>
         <td><%= teacher.age %></td>
         <td><%= teacher.education %></td>
-        <td><%= teacher.salary %></td>
+        <td><%= "$#{teacher.salary}" %></td>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
         <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Teacher', new_teacher_path %>
+<%= link_to 'New Teacher', new_teacher_path, class: "btn btn-primary" %>
