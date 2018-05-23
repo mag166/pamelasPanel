@@ -21,6 +21,7 @@ class CohortsController < ApplicationController
 
   # GET /cohorts/1/edit
   def edit
+    @student_cohort = StudentCohort.new
   end
 
   # POST /cohorts

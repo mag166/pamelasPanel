@@ -1,6 +1,21 @@
-<h1>Editing Cohort</h1>
+<h1>Edit Cohort</h1>
 
 <%= render 'form', cohort: @cohort %>
 
-<%= link_to 'Show', @cohort %> |
-<%= link_to 'Back', cohorts_path %>
+<h2>Add Student to Cohort</h2>
+
+<%= bootstrap_form_with(model: @student_cohort, local: true) do |form| %>
+      <div class="field">
+    <%= form.collection_select(:student_id, Student.all, :id, :full_name) %>
+    </div>
+      <div class="field">
+    <%= form.hidden_field(:cohort_id, value: "#{@cohort.id}") %>
+    </div>
+      <div class="actions">
+    <%= form.submit "Add Student" %>
+    </div>
+  <% end %>
+
+
+<%= link_to 'Show', @cohort, class: "btn btn-primary" %> |
+<%= link_to 'Back', cohorts_path, class: "btn btn-primary" %>

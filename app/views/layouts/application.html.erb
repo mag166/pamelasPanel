@@ -25,23 +25,22 @@
       <%= link_to "Cohorts", cohorts_path, class: "nav-item nav-link" %>
       <%= link_to "Teachers", teachers_path, class: "nav-item nav-link" %>
       <%= link_to "Students", students_path, class: "nav-item nav-link" %>
+<% if signed_in? %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete,class: "nav-item nav-link" %>
 
+    <% else %>
+      <%= link_to 'Sign in', sign_in_path, class: "nav-item nav-link" %>
+      <%= link_to 'Sign Up', sign_up_path, class: "nav-item nav-link" %>
+
+    <% end %>
+
+
+</div>
     </div>
   </div>
 </nav>
 
-<% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-    <% end %>
 
-    <div id="flash">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-</div>
 
 
   <div class="container">
