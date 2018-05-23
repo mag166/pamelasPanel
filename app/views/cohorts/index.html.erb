@@ -21,7 +21,12 @@
         <td><%= cohort.name %></td>
         <td><%= cohort.start_date %></td>
         <td><%= cohort.end_date %></td>
-        <td><%= cohort.teacher.first_name + " " + cohort.teacher.last_name %></td>
+        <%if cohort.teacher%>
+          <td><%= cohort.teacher.first_name + " " + cohort.teacher.last_name %></td>
+        <%else%>
+          <td><%=""%></td>
+        <%end%>
+
         <td><%= link_to 'Show', cohort %></td>
         <td><%= link_to 'Edit', edit_cohort_path(cohort) %></td>
         <td><%= link_to 'Destroy', cohort, method: :delete, data: { confirm: 'Are you sure?' } %></td>

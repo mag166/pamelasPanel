@@ -9,8 +9,11 @@
 
 <p>
   <strong>Teacher:</strong>
+<%if @cohort.teacher%>
+
   <%= @cohort.teacher.first_name + " " + @cohort.teacher.last_name %>
 </p>
+<%end%>
 
 <p>
   <strong>Name:</strong>
@@ -28,7 +31,8 @@
 </p>
   <p class="lead">
     <%= link_to 'Edit', edit_cohort_path(@cohort), class: "btn btn-primary" %> |
-    <%= link_to 'Back', :back, class: "btn btn-primary" %>  </p>
+    <%= link_to 'Back', :back, class: "btn btn-primary" %>  
+    </p>
 </div>
 
 

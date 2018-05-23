@@ -57,6 +57,10 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
+    @cohorts = @course.cohorts
+    @cohorts.each do |cohort|
+      cohort.destroy
+    end
     @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }

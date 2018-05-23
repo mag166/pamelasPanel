@@ -22,6 +22,8 @@ class CohortsController < ApplicationController
   # GET /cohorts/1/edit
   def edit
     @student_cohort = StudentCohort.new
+    @remove_student = StudentCohort.find_by(cohort_id: params[:id])
+
   end
 
   # POST /cohorts
@@ -57,7 +59,12 @@ class CohortsController < ApplicationController
   # DELETE /cohorts/1
   # DELETE /cohorts/1.json
   def destroy
+    @student_cohorts = @cohort.student_cohorts
+    @student_cohorts.each do |sc|
+      sc.destroy
+    end
     @cohort.destroy
+
     respond_to do |format|
       format.html { redirect_to cohorts_url, notice: 'Cohort was successfully destroyed.' }
       format.json { head :no_content }

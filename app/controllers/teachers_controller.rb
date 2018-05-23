@@ -57,6 +57,10 @@ class TeachersController < ApplicationController
   # DELETE /teachers/1
   # DELETE /teachers/1.json
   def destroy
+    @cohorts = @teacher.cohorts
+    @cohorts.each do |cohort|
+      cohort.update(teacher_id:Teacher.first.id)
+    end
     @teacher.destroy
     respond_to do |format|
       format.html { redirect_to teachers_url, notice: 'Teacher was successfully destroyed.' }
