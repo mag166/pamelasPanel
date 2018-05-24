@@ -22,7 +22,7 @@ class CohortsController < ApplicationController
   # GET /cohorts/1/edit
   def edit
     @student_cohort = StudentCohort.new
-    @remove_student = StudentCohort.find_by(cohort_id: params[:id])
+    #@remove_student = StudentCohort.find_by(cohort_id: params[:id])
 
   end
 

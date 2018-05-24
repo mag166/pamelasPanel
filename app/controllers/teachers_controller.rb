@@ -59,7 +59,7 @@ class TeachersController < ApplicationController
   def destroy
     @cohorts = @teacher.cohorts
     @cohorts.each do |cohort|
-      cohort.update(teacher_id:Teacher.first.id)
+      cohort.update(teacher_id:Teacher.first)
     end
     @teacher.destroy
     respond_to do |format|
